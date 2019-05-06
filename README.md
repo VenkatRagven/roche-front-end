@@ -1,5 +1,6 @@
-# FrontEndRecrutation repository was migrated to internal Bitbucket. To get access please contact with Roche DevTools Support
+# Running the app
 
-App runner: npm run start
-
-E2E tests runner: npm run e2e
+1.	Download our package from repository: https://github.com/VenkatRagven/roche-front-end
+2.	Run command : npm install
+3.	App should run after command: ‘npm run start’
+4.	You could run test just by: ‘npm run e2e’ (chrome browser) 
