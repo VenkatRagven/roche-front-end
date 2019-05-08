@@ -1,12 +1,14 @@
 import users from './users.js'
 
+// to fetch the api
 Promise.all(users.userNames()
-.map(name => fetch(`https://api.github.com/users/${name}/repos?per_page=1000`)))
+.map(name => fetch(`https://api.github.com/users/${name}/repos?per_page=100`)))
 .then(users => Promise.all(users.map(user => user.json())))
 .then(data => data.map(datum => new User(datum)))
 .then(appendUsersToDom)
 .catch(console.log);
 
+// to calculate the starts
 class User {
   constructor(data) {
     this.name = data[0].owner.login;
@@ -16,7 +18,7 @@ class User {
   }
 
 }
-
+// function to display users in the table
 function appendUsersToDom(users) {
   const tableBody = document.querySelector('.user-list__table > tbody');
   users.forEach(user => {
